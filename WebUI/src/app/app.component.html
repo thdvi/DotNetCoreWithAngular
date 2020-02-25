@@ -1,6 +1,10 @@
-<div class="container-fluid">
-<app-header></app-header>
-<app-menu></app-menu>
+<mat-sidenav-container>
+<mat-sidenav #sidenav mode="side" [(opened)]="isShowMenu" [mode]="'push'"  style="background-color: #2d2d2d;" >
+    <app-menu></app-menu>
+</mat-sidenav>
+<mat-sidenav-content>
+<app-header (showMenu)="showMenu($event)"></app-header>
 <app-slideshow></app-slideshow>
 <app-footer></app-footer>
-</div>
+</mat-sidenav-content>
+</mat-sidenav-container>

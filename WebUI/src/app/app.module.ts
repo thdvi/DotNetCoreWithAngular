@@ -10,6 +10,12 @@ import { MenuComponent } from './menu/menu.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
+import { SlideshowModule } from 'ng-simple-slideshow';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,11 +28,25 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    SlideshowModule,
   ],
   providers: [],
+  exports: [
+    MatSliderModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

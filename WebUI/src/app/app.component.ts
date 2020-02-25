@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isShowMenu: boolean = false;
   title = 'WebUI';
+  showMenu($event){
+    this.isShowMenu = $event;
+  }
 }
