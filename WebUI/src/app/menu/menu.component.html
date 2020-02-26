@@ -1,9 +1,29 @@
-<div class="container" style="width: 200px;">
-    <mat-toolbar>
+<div class="container" style="width: 200px">
+    <mat-toolbar style="color: white; background-color: #2d2d2d;">
         Menu
     </mat-toolbar>
     <mat-action-list>
-        <button mat-list-item> Home </button>
-        <button mat-list-item> Product </button>
+        <div mat-list-item>
+            <button mat-icon-button class="menuButton" (click)="changeRoute()"><mat-icon class="mat-icon-rtl-mirror">home</mat-icon> Home</button>
+        </div>
+        <div mat-list-item>
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" style="background-color: #2d2d2d;">
+                <!-- This is the tree node template for leaf nodes -->
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                  <!-- use a disabled button to provide padding for tree leaf -->
+                  <button mat-button class="menuButton" (click)="changeRoute()">{{node.name}}</button>
+                </mat-tree-node>
+                <!-- This is the tree node template for expandable nodes -->
+                <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+                  <button mat-icon-button matTreeNodeToggle
+                          [attr.aria-label]="'toggle ' + node.name" class="menuButton">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                    {{node.name}}
+                  </button>
+                </mat-tree-node>
+              </mat-tree>
+        </div>
     </mat-action-list>
 </div>

@@ -13,9 +13,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import {MatTreeModule} from '@angular/material/tree';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatIconModule,
     SlideshowModule,
+    MatTreeModule,
   ],
   providers: [],
   exports: [
@@ -45,7 +49,8 @@ import { CommonModule } from '@angular/common';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTreeModule,
   ],
   bootstrap: [AppComponent]
 })

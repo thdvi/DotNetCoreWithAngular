@@ -1,10 +1,12 @@
 <mat-sidenav-container>
 <mat-sidenav #sidenav mode="side" [(opened)]="isShowMenu" [mode]="'push'"  style="background-color: #2d2d2d;" >
-    <app-menu></app-menu>
+    <app-menu (showMenu)="showMenu($event)"></app-menu>
 </mat-sidenav>
 <mat-sidenav-content>
 <app-header (showMenu)="showMenu($event)"></app-header>
-<app-slideshow></app-slideshow>
+<div style="min-height: 1000px;">
+    <router-outlet></router-outlet>
+</div>
 <app-footer></app-footer>
 </mat-sidenav-content>
 </mat-sidenav-container>
