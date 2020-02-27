@@ -18,6 +18,9 @@ import {MatTreeModule} from '@angular/material/tree';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { BannerProductComponent } from './banner-product/banner-product.component';
+import { CardProductComponent } from './card-product/card-product.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     MenuComponent,
     SlideshowComponent,
-    HomeComponent
+    HomeComponent,
+    BannerProductComponent,
+    CardProductComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     SlideshowModule,
     MatTreeModule,
+    MatCardModule
   ],
   providers: [],
   exports: [
@@ -51,6 +57,8 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatIconModule,
     MatTreeModule,
+    MatCardModule,
+    
   ],
   bootstrap: [AppComponent]
 })
