@@ -1,12 +1,10 @@
 <div id="banner-product" class="container">
-    <mat-toolbar><label> New Product</label></mat-toolbar>       
-        <div class="row" style="max-width: 1110px; padding-left: 14px">
-            <a class="prev">&#10094;</a>
-            <div *ngFor="let i of arr" style="max-width: 250px;">
-                <app-card-product></app-card-product>
-            </div>
-            <a class="next">&#10095;</a>
+    <div class="row">
+        <mat-toolbar><label> New Product</label></mat-toolbar>
+    </div>
+    <div class="row scrolling-wrapper" style="max-width: 1110px; padding-left: 14px">
+        <div *ngFor="let product of products" class="card" style="max-width: 200px;">
+            <app-card-product [productEntry]="product"></app-card-product>
         </div>
-
-
+    </div>
 </div>

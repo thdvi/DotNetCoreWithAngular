@@ -1,20 +1,11 @@
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(248, 245, 245, 0.8);
-  }
+
+  .scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
   
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
   }
+    .card {
+      flex: 0 0 auto;
+    }
+  

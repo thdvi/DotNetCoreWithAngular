@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import { BannerProductComponent } from './banner-product/banner-product.component';
 import { CardProductComponent } from './card-product/card-product.component';
 import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     SlideshowModule,
     MatTreeModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [

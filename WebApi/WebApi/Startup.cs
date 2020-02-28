@@ -29,6 +29,7 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<WebApiContext>();
             services.AddOData();
@@ -41,8 +42,14 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(
+            options => options.WithOrigins("http://localhost:4200").AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
 
-            app.UseMvc(routerBuilder => {
+            app.UseMvc(routerBuilder =>
+            {
                 routerBuilder.EnableDependencyInjection();
                 routerBuilder.Expand().Count().Filter().OrderBy().Select().MaxTop(null);
                 routerBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());

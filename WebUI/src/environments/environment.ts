@@ -1,9 +1,18 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+const RootUrl = 'http://localhost:62535';
+
+const ServiceConfig = {
+  ODataRootUrl: RootUrl + '/odata',
+  IterationQuantity: 15,
+  LargeIterationThreshold: 1000,
+  LargeIterationQuantity: 5000
+};
 
 export const environment = {
-  production: false
+  production: false,
+  ServiceConfig: ServiceConfig
 };
 
 /*

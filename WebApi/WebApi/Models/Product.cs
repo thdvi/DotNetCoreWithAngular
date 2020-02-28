@@ -28,6 +28,14 @@ namespace WebApi.Models
 
         [Required]
         [Column(TypeName = "int")]
+        public int Price { get; set; }
+
+        [Required]
+        [Column(TypeName = "varchar(Max)")]
+        public string Image { get; set; }
+
+        [Required]
+        [Column(TypeName = "int")]
         public int CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
